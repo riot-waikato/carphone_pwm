@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/nbk4/Desktop/BluetoothLeGatt/Application/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.0 rc3"
+        sha1="f7a080fd471dd9818e2e6798177ba3c868fb5903">
+        <dex dex="/home/nbk4/Desktop/BluetoothLeGatt/Application/build/intermediates/pre-dexed/debug/instant-run-bootstrap_dea7a8356044d0d7007e46bb4883ff40650a9fd9.jar" />
+    </item>
+
+</items>
