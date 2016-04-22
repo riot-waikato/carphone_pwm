@@ -25,6 +25,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -45,7 +49,7 @@ import java.util.List;
  * communicates with {@code BluetoothLeService}, which in turn interacts with the
  * Bluetooth LE API.
  */
-public class DeviceControlActivity extends Activity {
+public class DeviceControlActivity extends Activity implements SensorEventListener {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
@@ -67,6 +71,33 @@ public class DeviceControlActivity extends Activity {
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
 
+    private int statusA = 0;
+    private int statusB = 0;
+
+    private final int RESOLUTION = 50;
+    private final int KEEPALIVE = 970;
+    //////////////////////////////////DIRECTION VALUES
+    private final int STOP = 0;
+    private final int FORWARD = 1;
+    private final int BACKWARD = 2;
+    private final int LEFT = 1;
+    private final int RIGHT = 2;
+
+
+    private static char[] chars = new char[]  {'0', '0'};
+    private static char[] chars_last = new char[] {0, 0};
+    //////////////////////////////////END_DIR
+
+    private SensorManager sensorManager;
+    private Sensor Accelerometer;
+
+    private static final int SENSOR_DELAY = 200000; //delay in microseconds - this gives us silky smooth 5fps
+
+    private long lastUpdate = System.currentTimeMillis();
+    private long curTime = System.currentTimeMillis();
+
+    private float[] Sensor_Readings = new float[] {0, 0, 0}; //X, Y, Z - Maybe this could be done with a vector?
+
     // Code to manage Service lifecycle.
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
 
@@ -79,6 +110,7 @@ public class DeviceControlActivity extends Activity {
             }
             // Automatically connects to the device upon successful start-up initialization.
             mBluetoothLeService.connect(mDeviceAddress);
+            System.out.println("%%%%%%%% We KNOW we've connected here...");
         }
 
         @Override
@@ -86,6 +118,65 @@ public class DeviceControlActivity extends Activity {
             mBluetoothLeService = null;
         }
     };
+
+    @Override
+    public void onSensorChanged(SensorEvent e) {
+        Sensor sensor = e.sensor;
+        if(sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            curTime = System.currentTimeMillis();
+            if(curTime - lastUpdate >= RESOLUTION) {
+                for(int i = 0; i < 3; i++)
+                    Sensor_Readings[i] = e.values[i];
+
+                TextView outputstream = (TextView)findViewById(R.id.data_value);
+                String outputString = "Current time:  " + curTime + "\nLast update:  " + lastUpdate +
+                        "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
+                        "\nZ:  " + Sensor_Readings[2];
+
+                //set y:
+                if(-1* Sensor_Readings[0] <= -3)
+                    chars[0] = ('0' + FORWARD);
+                else if (-1 * Sensor_Readings[0] >= 3)
+                    chars[0] = ('0' + BACKWARD);
+                else
+                    chars[0] = '0' + STOP;
+
+                //set X
+                if(Sensor_Readings[1] <= -2.5)
+                    chars[1] = ('0' + LEFT);
+                else if (Sensor_Readings[1] >= 2.5)
+                    chars[1] = ('0' + RIGHT);
+                else
+                    chars[1] = '0' + STOP;
+
+                //ignore Z!
+
+                if(chars_last[0] != chars[0] || chars_last[1] != chars[1]) { //only update if we really need to
+                    if (mBluetoothLeService != null) {
+                        for (int i = 0; i < chars.length; i++) {
+                            mBluetoothLeService.writeCustomCharacteristic((int) chars[1 - i], 1 - i);
+                        }
+                        lastUpdate = curTime;
+                    }
+                    chars_last[0] = chars[0];
+                    chars_last[1] = chars[1];
+                }
+                else if (curTime - lastUpdate >= KEEPALIVE) //send a keepalive every second or so if no updates
+                    if (mBluetoothLeService != null) {
+                        for (int i = 0; i < chars.length; i++) {
+                            mBluetoothLeService.writeCustomCharacteristic((int) chars[1 - i], 1 - i);
+                        }
+                        lastUpdate = curTime;
+                    }
+                outputstream.setText(outputString);
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        //do nothing
+    }
 
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
@@ -175,6 +266,10 @@ public class DeviceControlActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        Accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(this, Accelerometer, SensorManager.SENSOR_DELAY_NORMAL); //may try swapping out with SENSOR_DELAY
+        System.out.println("***** Sensor manager registered");
     }
 
     @Override
@@ -185,12 +280,16 @@ public class DeviceControlActivity extends Activity {
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);
             Log.d(TAG, "Connect request result=" + result);
         }
+        sensorManager.registerListener(this, Accelerometer, SensorManager.SENSOR_DELAY_NORMAL); //may try swapping out with SENSOR_DELAY
+        System.out.println("***** Sensor manager registered");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         unregisterReceiver(mGattUpdateReceiver);
+        sensorManager.unregisterListener(this);
+        System.out.println("***** Sensor manager unregistered");
     }
 
     @Override
@@ -311,12 +410,11 @@ public class DeviceControlActivity extends Activity {
     }
 
 
-    private static char[] chars = new char[]  {'2','/','1'};
 
     public void onClickWrite(View v){
         if(mBluetoothLeService != null) {
             for(int i = 0; i < chars.length; i++) {
-                mBluetoothLeService.writeCustomCharacteristic((int) chars[2-i], 2 - i);
+                //mBluetoothLeService.writeCustomCharacteristic((int) chars[2-i], 2-i);
             }
         }
     }

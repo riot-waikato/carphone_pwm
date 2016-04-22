@@ -4,7 +4,7 @@
     api-level="18"
     density="xhdpi"
     format="7"
-    timestamp="17131794110898" >
+    timestamp="21673621774596" >
 
     <task
         name="javac"
@@ -23,7 +23,7 @@
         location="/home/nbk4/Desktop/BluetoothLeGatt/Application/build/outputs/apk/Application-debug.apk"
         type="MAIN" />
 
-    <build timestamp="17131794110898" >
+    <build timestamp="21673621774596" >
         <artifact
             location="/home/nbk4/Desktop/BluetoothLeGatt/Application/build/outputs/apk/Application-debug.apk"
             type="MAIN" />

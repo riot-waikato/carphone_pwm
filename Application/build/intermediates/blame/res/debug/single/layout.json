@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/nbk4/Desktop/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/layout/listitem_device.xml",
-        "source": "/home/nbk4/Desktop/BluetoothLeGatt/Application/src/main/res/layout/listitem_device.xml"
-    },
-    {
         "merged": "/home/nbk4/Desktop/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/layout/gatt_services_characteristics.xml",
         "source": "/home/nbk4/Desktop/BluetoothLeGatt/Application/src/main/res/layout/gatt_services_characteristics.xml"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/layout/listitem_device.xml",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt/Application/src/main/res/layout/listitem_device.xml"
     },
     {
         "merged": "/home/nbk4/Desktop/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/layout/button_control.xml",
