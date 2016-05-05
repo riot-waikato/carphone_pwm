@@ -25,6 +25,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Paint;
+import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -32,10 +34,13 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
@@ -78,10 +83,16 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
     private final int KEEPALIVE = 970;
     //////////////////////////////////DIRECTION VALUES
     private final int STOP = 0;
-    private final int FORWARD = 1;
-    private final int BACKWARD = 2;
-    private final int LEFT = 1;
-    private final int RIGHT = 2;
+    private final int FORWARD_LOW = 1;
+    private final int FORWARD_MID = 2;
+    private final int FORWARD_HIGH = 3;
+    private final int BACKWARD_LOW = 4;
+    private final int BACKWARD_MID = 5;
+    private final int BACKWARD_HIGH = 6;
+    private final int LEFT_HALF = 1;
+    private final int LEFT_FULL = 2;
+    private final int RIGHT_HALF = 3;
+    private final int RIGHT_FULL = 4;
 
 
     private static char[] chars = new char[]  {'0', '0'};
@@ -125,31 +136,47 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
         if(sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             curTime = System.currentTimeMillis();
             if(curTime - lastUpdate >= RESOLUTION) {
-                for(int i = 0; i < 3; i++)
+                for (int i = 0; i < 3; i++)
                     Sensor_Readings[i] = e.values[i];
 
-                TextView outputstream = (TextView)findViewById(R.id.data_value);
+                TextView outputstream = (TextView) findViewById(R.id.data_value);
                 String outputString = "Current time:  " + curTime + "\nLast update:  " + lastUpdate +
                         "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
                         "\nZ:  " + Sensor_Readings[2];
 
                 //set y:
-                if(-1* Sensor_Readings[0] <= -3)
-                    chars[0] = ('0' + FORWARD);
-                else if (-1 * Sensor_Readings[0] >= 3)
-                    chars[0] = ('0' + BACKWARD);
-                else
+                if (-1 * Sensor_Readings[0] <= -2) {
+                    if (Sensor_Readings[0] * -1 <= -6) {
+                        chars[0] = ('0' + FORWARD_HIGH);
+                    } else if (Sensor_Readings[0] * -1 <= -4) {
+                        chars[0] = ('0' + FORWARD_MID);
+                    } else
+                        chars[0] = ('0' + FORWARD_LOW);
+
+                } else if (-1 * Sensor_Readings[0] >= 3) {
+                    if (-1 * Sensor_Readings[0] >= 7) {
+                        chars[0] = ('0' + BACKWARD_HIGH);
+                    } else if (-1 * Sensor_Readings[0] >= 5) {
+                        chars[0] = ('0' + BACKWARD_MID);
+                    } else
+                        chars[0] = ('0' + BACKWARD_LOW);
+                } else
                     chars[0] = '0' + STOP;
 
                 //set X
-                if(Sensor_Readings[1] <= -2.5)
-                    chars[1] = ('0' + LEFT);
+                if (Sensor_Readings[1] <= -4.2)
+                    chars[1] = '0' + LEFT_FULL;
+                else if (Sensor_Readings[1] <= -2.5)
+                    chars[1] = ('0' + LEFT_HALF);
+                else if (Sensor_Readings[1] >= 4.2)
+                    chars[1] = ('0' + RIGHT_HALF);
                 else if (Sensor_Readings[1] >= 2.5)
-                    chars[1] = ('0' + RIGHT);
+                    chars[1] = ('0' + RIGHT_FULL);
                 else
                     chars[1] = '0' + STOP;
 
                 //ignore Z!
+
 
                 if(chars_last[0] != chars[0] || chars_last[1] != chars[1]) { //only update if we really need to
                     if (mBluetoothLeService != null) {
@@ -177,7 +204,7 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         //do nothing
     }
-
+    //
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
     // ACTION_GATT_DISCONNECTED: disconnected from a GATT server.
@@ -254,12 +281,6 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
-        // Sets up UI references.
-        //((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
-        //mGattServicesList = (ExpandableListView) findViewById(R.id.gatt_services_list);
-        //mGattServicesList.setOnChildClickListener(servicesListClickListner);
-        //mConnectionState = (TextView) findViewById(R.id.connection_state);
-
         mDataField = (TextView) findViewById(R.id.data_value);
 
         getActionBar().setTitle(mDeviceName);
@@ -270,6 +291,8 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
         Accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, Accelerometer, SensorManager.SENSOR_DELAY_NORMAL); //may try swapping out with SENSOR_DELAY
         System.out.println("***** Sensor manager registered");
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     @Override
@@ -407,15 +430,5 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED);
         intentFilter.addAction(BluetoothLeService.ACTION_DATA_AVAILABLE);
         return intentFilter;
-    }
-
-
-
-    public void onClickWrite(View v){
-        if(mBluetoothLeService != null) {
-            for(int i = 0; i < chars.length; i++) {
-                //mBluetoothLeService.writeCustomCharacteristic((int) chars[2-i], 2-i);
-            }
-        }
     }
 }

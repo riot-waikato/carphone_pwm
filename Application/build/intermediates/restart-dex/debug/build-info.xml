@@ -4,29 +4,37 @@
     api-level="18"
     density="xhdpi"
     format="7"
-    timestamp="21673621774596" >
+    timestamp="1161683506681231"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="338" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="509" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="126" />
     <task
         name="verifier"
-        duration="0" />
+        duration="29" />
 
     <artifact
-        location="/home/nbk4/Desktop/BluetoothLeGatt/Application/build/outputs/apk/Application-debug.apk"
-        type="MAIN" />
+        location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
-    <build timestamp="21673621774596" >
+    <build timestamp="1161467037937890" >
         <artifact
-            location="/home/nbk4/Desktop/BluetoothLeGatt/Application/build/outputs/apk/Application-debug.apk"
+            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/outputs/apk/Application-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="1161683506681231"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
