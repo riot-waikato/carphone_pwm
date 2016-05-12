@@ -8,6 +8,10 @@
         "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/layout/actionbar_indeterminate_progress.xml"
     },
     {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/layout/prefset.xml",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/layout/prefset.xml"
+    },
+    {
         "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/layout/listitem_device.xml",
         "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/layout/listitem_device.xml"
     },

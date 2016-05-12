@@ -25,22 +25,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
@@ -94,6 +100,7 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
     private final int RIGHT_HALF = 3;
     private final int RIGHT_FULL = 4;
 
+    private int multiplier = 14;
 
     private static char[] chars = new char[]  {'0', '0'};
     private static char[] chars_last = new char[] {0, 0};
@@ -108,6 +115,63 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
     private long curTime = System.currentTimeMillis();
 
     private float[] Sensor_Readings = new float[] {0, 0, 0}; //X, Y, Z - Maybe this could be done with a vector?
+
+
+    private int backcolor = 0xffa500;
+    private int slidecolor = 0xff0000;
+    private int forecolor = 0xffa500;
+
+    private SharedPreferences sharedprefs;
+
+    private String backkey = "background_color";
+    private String slidekey = "slide_color";
+    private String indicatorkey = "indicator_color ";
+    private String prefskey = "CARPHONEPREFS";
+
+
+    private int seperate = 0;
+    private int invert_disp = 1;
+    private int invert_cont = 1;
+    private String sepkey = "seperate";
+    private String invdispkey = "invdispay";
+    private String invcontkey = "invcontol";
+    private boolean sepchanged = false;
+    private boolean dispchanged = false;
+    private boolean contchanged = false;
+
+
+    private void setPrefs() {
+        SharedPreferences.Editor editor = sharedprefs.edit();
+        backcolor = Integer.parseInt(sharedprefs.getString(backkey, Integer.toString(backcolor)));
+        slidecolor = Integer.parseInt(sharedprefs.getString(slidekey, Integer.toString(slidecolor)));
+        forecolor = Integer.parseInt(sharedprefs.getString(indicatorkey, Integer.toString(forecolor)));
+
+        seperate = Integer.parseInt(sharedprefs.getString(sepkey, Integer.toString(0)));
+        invert_disp = Integer.parseInt(sharedprefs.getString(invdispkey, Integer.toString(1)));
+        invert_cont = Integer.parseInt(sharedprefs.getString(invcontkey, Integer.toString(1)));
+
+        setColors();
+    }
+
+    private void setColors() {
+        ImageView circle = (ImageView) findViewById(R.id.indicator_updown);
+        ImageView circle2 = (ImageView) findViewById(R.id.indicator_leftright);
+        ImageView redSquare = (ImageView) findViewById(R.id.redsquare_updown);
+        ImageView redSquare2 = (ImageView) findViewById(R.id.redsquare_leftright);
+        ImageView background = (ImageView) findViewById(R.id.background_image);
+
+        background.setBackgroundColor(backcolor);
+
+        circle.setBackgroundColor(slidecolor);
+        circle2.setBackgroundColor(slidecolor);
+        redSquare.setBackgroundColor(forecolor);
+        redSquare2.setBackgroundColor(forecolor);
+
+        //RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.controlmaster);
+        //relativeLayout.setBackgroundColor(backcolor);
+        System.out.println(Integer.toHexString(backcolor));
+        //this.getWindow().getDecorView().setBackgroundColor(backcolor); //-enable this to break EVERTHING
+    }
 
     // Code to manage Service lifecycle.
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -139,24 +203,33 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 for (int i = 0; i < 3; i++)
                     Sensor_Readings[i] = e.values[i];
 
-                TextView outputstream = (TextView) findViewById(R.id.data_value);
+                ImageView circle = (ImageView) findViewById(R.id.indicator_updown);
+                ImageView circle2 = (ImageView) findViewById(R.id.indicator_leftright);
+                ImageView redSquare = (ImageView) findViewById(R.id.redsquare_updown);
+                ImageView redSquare2 = (ImageView) findViewById(R.id.redsquare_leftright);
+
+                TextView textForward = (TextView) findViewById(R.id.forward_char);
+                TextView textBackward = (TextView) findViewById(R.id.backward_char);
+                TextView textLeft = (TextView) findViewById(R.id.left_char);
+                TextView textRight = (TextView) findViewById(R.id.right_char);
+
                 String outputString = "Current time:  " + curTime + "\nLast update:  " + lastUpdate +
                         "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
                         "\nZ:  " + Sensor_Readings[2];
 
                 //set y:
-                if (-1 * Sensor_Readings[0] <= -2) {
+                if (-1 * Sensor_Readings[0]*invert_cont  <= -2) {
                     if (Sensor_Readings[0] * -1 <= -6) {
                         chars[0] = ('0' + FORWARD_HIGH);
-                    } else if (Sensor_Readings[0] * -1 <= -4) {
+                    } else if (Sensor_Readings[0] * -1*invert_cont  <= -4) {
                         chars[0] = ('0' + FORWARD_MID);
                     } else
                         chars[0] = ('0' + FORWARD_LOW);
 
-                } else if (-1 * Sensor_Readings[0] >= 3) {
-                    if (-1 * Sensor_Readings[0] >= 7) {
+                } else if (-1 * Sensor_Readings[0]*invert_cont  >= 3) {
+                    if (-1 * Sensor_Readings[0]*invert_cont  >= 7) {
                         chars[0] = ('0' + BACKWARD_HIGH);
-                    } else if (-1 * Sensor_Readings[0] >= 5) {
+                    } else if (-1 * Sensor_Readings[0]*invert_cont  >= 5) {
                         chars[0] = ('0' + BACKWARD_MID);
                     } else
                         chars[0] = ('0' + BACKWARD_LOW);
@@ -195,7 +268,59 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                         }
                         lastUpdate = curTime;
                     }
-                outputstream.setText(outputString);
+
+
+
+
+                /////////////////////////layout things
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                WindowManager wm = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE); // the results will be higher than using the activity context object or the getWindowManager() shortcut
+                wm.getDefaultDisplay().getMetrics(displayMetrics);
+                int screenWidth = displayMetrics.widthPixels;
+                int screenHeight = displayMetrics.heightPixels;
+
+                int offsetX = (int)(multiplier * Sensor_Readings[0]*invert_disp);
+                int offsetY = (int)(multiplier * Sensor_Readings[1]);
+
+                //dimensions:
+                //circle should be ~128
+                //boundaries: 3 5 7 | 2 4 6 | 2.5 4.2
+                //multiplier: 15
+                //this gives us 45 75 105 | 30 60 90 | 37.7 63
+
+                int disp = 0;
+                int size_orange = 64;
+                redSquare.layout(screenWidth/2 - 64 - seperate, screenHeight/2 -256, screenWidth/2 + 64 - seperate, screenHeight/2 + 128);
+
+                ////text
+                textForward.setX(screenWidth/2 - 6 - seperate);
+                textForward.setY(screenHeight/2 - 296);
+
+                textBackward.setX(screenWidth/2 - 6 -seperate);
+                textBackward.setY(screenHeight/2 + 128);
+
+                textLeft.setY(screenHeight/2 - 64 - 18);
+                textLeft.setX(screenWidth/2 - 224 + seperate);
+
+                textRight.setY(screenHeight/2 - 64 - 18);
+                textRight.setX(screenWidth/2 + 224 - 20 + seperate);
+                ////text
+
+                circle.layout(screenWidth/2 - size_orange - seperate,
+                        screenHeight/2 - 2*size_orange + offsetX,
+                        screenWidth/2 + size_orange - seperate,
+                        screenHeight/2 + offsetX);
+
+                circle2.layout(screenWidth/2 - size_orange + offsetY + seperate,
+                        screenHeight/2 - 2*size_orange,
+                        screenWidth/2 + size_orange+ offsetY + seperate,
+                        screenHeight/2 );
+
+
+                redSquare2.layout(screenWidth/2 - 194 + seperate, screenHeight/2 -128, screenWidth/2 + 194 + seperate, screenHeight/2);
+
+                ViewGroup vg = (ViewGroup)findViewById(R.id.controlmaster);
+                vg.invalidate();
             }
         }
     }
@@ -289,10 +414,13 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         Accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(this, Accelerometer, SensorManager.SENSOR_DELAY_NORMAL); //may try swapping out with SENSOR_DELAY
+        sensorManager.registerListener(this, Accelerometer, SensorManager.SENSOR_DELAY_UI); //may try swapping out with SENSOR_DELAY
         System.out.println("***** Sensor manager registered");
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        sharedprefs = getApplicationContext().getSharedPreferences(prefskey, Context.MODE_PRIVATE);
+        setPrefs();
     }
 
     @Override
@@ -303,8 +431,11 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
             final boolean result = mBluetoothLeService.connect(mDeviceAddress);
             Log.d(TAG, "Connect request result=" + result);
         }
-        sensorManager.registerListener(this, Accelerometer, SensorManager.SENSOR_DELAY_NORMAL); //may try swapping out with SENSOR_DELAY
+        sensorManager.registerListener(this, Accelerometer, SensorManager.SENSOR_DELAY_UI); //may try swapping out with SENSOR_DELAY
         System.out.println("***** Sensor manager registered");
+
+        setPrefs();
+        sharedprefs = getApplicationContext().getSharedPreferences(prefskey, Context.MODE_PRIVATE);
     }
 
     @Override
@@ -325,6 +456,7 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.gatt_services, menu);
+
         if (mConnected) {
             menu.findItem(R.id.menu_connect).setVisible(false);
             menu.findItem(R.id.menu_disconnect).setVisible(true);
@@ -342,7 +474,12 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 mBluetoothLeService.connect(mDeviceAddress);
                 return true;
             case R.id.menu_disconnect:
-                mBluetoothLeService.disconnect();
+                onBackPressed();
+                return true;
+            case R.id.preferences:
+                Intent intent = new Intent();
+                intent.setClassName(this, "com.example.android.bluetoothlegatt.PrefsActivity");
+                startActivity(intent);
                 return true;
             case android.R.id.home:
                 onBackPressed();

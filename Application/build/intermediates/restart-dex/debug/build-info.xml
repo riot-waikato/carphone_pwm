@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="armeabi-v7a,armeabi"
-    api-level="18"
-    density="xhdpi"
+    api-level="23"
+    density="xxhdpi"
     format="7"
-    timestamp="1161683506681231"
-    verifier="COMPATIBLE" >
+    timestamp="1769020128038960" >
 
     <task
         name="javac"
-        duration="338" />
+        duration="427" />
     <task
         name="instant-run-dex"
-        duration="509" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="126" />
+        duration="51" />
     <task
         name="verifier"
-        duration="29" />
+        duration="11" />
 
     <artifact
-        location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+        type="DEX" />
 
-    <build timestamp="1161467037937890" >
+    <build timestamp="1764508436260767" >
         <artifact
             location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/outputs/apk/Application-debug.apk"
             type="MAIN" />
     </build>
-    <build
-        timestamp="1161683506681231"
-        verifier="COMPATIBLE" >
+    <build timestamp="1766442123766760" >
         <artifact
-            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
+            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+    </build>
+    <build timestamp="1769020128038960" >
+        <artifact
+            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

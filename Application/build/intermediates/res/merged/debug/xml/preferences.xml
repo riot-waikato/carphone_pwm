@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <CheckBoxPreference
+            android:key="invert_controls"
+            android:title="Invert Controls"
+            android:defaultValue="false"
+            />
+        <CheckBoxPreference
+            android:key="invert_display"
+            android:title="Invert Display"
+            android:defaultValue="false"
+            />
+        <CheckBoxPreference
+            android:key="seperate_controls"
+            android:title="Seperate controls"
+            android:defaultValue="false"
+            />
+        <!--<Button
+            android:id="@+id/editbackground"
+            android:layout_width="wrap_content"
+            android:text="Background color"
+            />
+        <Button
+            android:id="@+id/editslide"
+            android:layout_width="wrap_content"
+            android:text="Slider color"
+            />
+        <Preference
+            android:id="@+id/editindicator"
+            android:layout_width="wrap_content"
+            android:text="Indicator color"
+            />
+        -->
+</PreferenceScreen>

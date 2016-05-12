@@ -1,7 +1,35 @@
 [
     {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/carphone.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/carphone.png"
+    },
+    {
         "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
         "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/blue_thumb_default.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/blue_thumb_default.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/blue_thumb_pressed.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/blue_thumb_pressed.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/green_thumb_default.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/green_thumb_default.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/red_thumb_pressed.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/red_thumb_pressed.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/green_thumb_pressed.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/green_thumb_pressed.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/red_thumb_default.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/drawable-hdpi/red_thumb_default.png"
     },
     {
         "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/orange_circle.png",

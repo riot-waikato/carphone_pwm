@@ -4,6 +4,18 @@
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
+    <color name="materialcolorpicker__black">#000000</color>
+    <color name="materialcolorpicker__blue">#2196f3</color>
+    <color name="materialcolorpicker__dialogcolor">#009688</color>
+    <color name="materialcolorpicker__dribble">#ea4c89</color>
+    <color name="materialcolorpicker__dribbledark">#c32361</color>
+    <color name="materialcolorpicker__green">#4caf50</color>
+    <color name="materialcolorpicker__grey">#b3b3b3</color>
+    <color name="materialcolorpicker__lightgrey">#d9d9d9</color>
+    <color name="materialcolorpicker__red">#f44336</color>
+    <color name="materialcolorpicker__white">#ffffff</color>
+    <color name="oliveTan">#ddcc77ff</color>
+    <color name="teal">#88cceeff</color>
     <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/><attr name="android:minWidth"/><attr name="android:minHeight"/></declare-styleable>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
@@ -14,8 +26,11 @@
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="materialcolorpicker__activity_horizontal_margin">16dp</dimen>
+    <dimen name="materialcolorpicker__activity_vertical_margin">16dp</dimen>
     <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
-    <string name="app_name">BluetoothLeGatt</string>
+    <string name="Carphone">Carphone</string>
+    <string name="app_name">Carphone</string>
     <string name="ble_not_supported">BLE is not supported</string>
     <string name="connected">Connected</string>
     <string name="disconnected">Disconnected</string>
@@ -33,12 +48,17 @@
     <string name="label_data">Data:</string>
     <string name="label_device_address">Device address:</string>
     <string name="label_state">State:</string>
+    <string name="materialcolorpicker__app_name">Android Material Color Picker Dialog</string>
+    <string name="materialcolorpicker__btnSelectColor">Select</string>
+    <string name="materialcolorpicker__descLib">Material Color Picker Dialog</string>
+    <string name="materialcolorpicker__errHex">Hex Code Format incorrect</string>
+    <string name="materialcolorpicker__inputColor">Color: </string>
     <string name="menu_connect">Connect</string>
     <string name="menu_disconnect">Disconnect</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     <string name="no_data">No data</string>
-    <string name="title_devices">BLE Device Scan</string>
+    <string name="title_devices">Carphone</string>
     <string name="unknown_characteristic">Unknown characteristic</string>
     <string name="unknown_device">Unknown device</string>
     <string name="unknown_service">Unknown service</string>
@@ -70,5 +90,8 @@
         <item name="android:shadowColor">#7F000000</item>
         <item name="android:shadowDy">-3.5</item>
         <item name="android:shadowRadius">2</item>
+    </style>
+    <style name="materialcolorpicker__AppTheme" parent="android:Theme.Material.Light">
+        <!-- Customize your theme here. -->
     </style>
 </resources>

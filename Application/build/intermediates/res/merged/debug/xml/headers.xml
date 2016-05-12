@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+    <header
+        android:fragment="com.example.android.bluetoothlegatt.MyPreferenceFragment"
+        android:title="Controls"
+        android:summary="Modify the way the car behaves, and how the car looks" />
+</preference-headers>

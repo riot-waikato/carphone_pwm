@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView
+            android:layout_centerVertical="true"
+            android:text="        Background color"
+            android:textSize="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+        <Button
+            android:background="#ffa500"
+            android:id="@+id/editbackground"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          "
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView
+            android:layout_centerVertical="true"
+            android:text="        Slider color    "
+            android:textSize="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+        <Button
+            android:id="@+id/editslide"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          "
+            android:background="#ff0030"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView
+            android:layout_centerVertical="true"
+            android:text="        Indicator color "
+            android:textSize="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+        <Button
+            android:id="@+id/editindicator"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          "
+            android:background="#ffa500"
+        />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView
+            android:layout_centerVertical="true"
+            android:text="        Invert controls "
+            android:textSize="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+        <CheckBox
+            android:layout_centerVertical="true"
+            android:id="@+id/invertcontrol"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.50"
+            android:scaleY="1.50"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView
+            android:layout_centerVertical="true"
+            android:text="        Invert display  "
+            android:textSize="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+        <CheckBox
+            android:layout_centerVertical="true"
+            android:id="@+id/invertdisplay"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.50"
+            android:scaleY="1.50"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView
+            android:layout_centerVertical="true"
+            android:text="        Seperate display"
+            android:textSize="74px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+        <CheckBox
+            android:layout_centerVertical="true"
+            android:id="@+id/seperatedisplay"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.50"
+            android:scaleY="1.50"
+            />
+    </RelativeLayout>
+</LinearLayout>

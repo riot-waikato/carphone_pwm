@@ -18,12 +18,16 @@
           android:checkable="false"
           android:orderInCategory="1"
           android:showAsAction="ifRoom"/>
+    <item android:id="@+id/preferences"
+          android:title="Preferences"
+          android:orderInCategory="104"
+          android:showAsAction="ifRoom|withText"/>
     <item android:id="@+id/menu_connect"
           android:title="@string/menu_connect"
           android:orderInCategory="100"
           android:showAsAction="ifRoom|withText"/>
     <item android:id="@+id/menu_disconnect"
           android:title="@string/menu_disconnect"
-          android:orderInCategory="101"
+          android:orderInCategory="102"
           android:showAsAction="ifRoom|withText"/>
 </menu>

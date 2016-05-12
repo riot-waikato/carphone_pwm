@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/mipmap-hdpi-v4/green_thumb_pressed.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/mipmap-hdpi/green_thumb_pressed.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/mipmap-hdpi-v4/red_thumb_pressed.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/mipmap-hdpi/red_thumb_pressed.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/mipmap-hdpi-v4/blue_thumb_default.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/mipmap-hdpi/blue_thumb_default.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/mipmap-hdpi-v4/green_thumb_default.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/mipmap-hdpi/green_thumb_default.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/mipmap-hdpi-v4/red_thumb_default.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/mipmap-hdpi/red_thumb_default.png"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/mipmap-hdpi-v4/blue_thumb_pressed.png",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/mipmap-hdpi/blue_thumb_pressed.png"
+    }
+]

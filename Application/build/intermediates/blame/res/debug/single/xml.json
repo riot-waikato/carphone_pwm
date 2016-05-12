@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/xml/array.xml",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/xml/array.xml"
+    },
+    {
+        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/xml/headers.xml",
+        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/xml/headers.xml"
+    }
+]
