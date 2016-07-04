@@ -4,39 +4,44 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="1769020128038960" >
+    timestamp="3973168581624092"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="427" />
+        duration="1016" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="546" />
     <task
         name="instant-run-transform"
-        duration="51" />
+        duration="224" />
     <task
         name="verifier"
-        duration="11" />
+        duration="99" />
 
     <artifact
-        location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-        type="DEX" />
+        location="/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
-    <build timestamp="1764508436260767" >
+    <build timestamp="3972799378323843" >
         <artifact
-            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/outputs/apk/Application-debug.apk"
+            location="/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/outputs/apk/Application-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="1766442123766760" >
+    <build
+        timestamp="3973093332847341"
+        verifier="FIELD_ADDED" >
         <artifact
-            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/resources-debug.ap_"
-            type="RESOURCES" />
-    </build>
-    <build timestamp="1769020128038960" >
-        <artifact
-            location="/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            location="/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
             type="DEX" />
+    </build>
+    <build
+        timestamp="3973168581624092"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

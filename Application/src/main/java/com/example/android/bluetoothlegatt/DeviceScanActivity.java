@@ -106,8 +106,8 @@ public class DeviceScanActivity extends ListActivity {
             finish();
             return;
         }
-
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        //needed for android 6
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // Android M Permission check 
             if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -123,7 +123,7 @@ public class DeviceScanActivity extends ListActivity {
                 });
                 builder.show();
             }
-        }*/
+        }
 
         sharedprefs = getApplicationContext().getSharedPreferences(prefskey, Context.MODE_PRIVATE);
     }
@@ -226,6 +226,7 @@ public class DeviceScanActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
         if (device == null) return;
+
         final Intent intent = new Intent(this, DeviceControlActivity.class);
         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());

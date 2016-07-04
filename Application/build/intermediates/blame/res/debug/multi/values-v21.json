@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/values-v21/values-v21.xml",
+        "outputFile": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/values-v21/values-v21.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 131
                 },
                 "from": {
-                    "file": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/values-v21/base-template-styles.xml",
+                    "file": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/values-v21/base-template-styles.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,

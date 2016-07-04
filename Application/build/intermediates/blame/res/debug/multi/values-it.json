@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/values-it/values-it.xml",
+        "outputFile": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/values-it/values-it.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 145
                 },
                 "from": {
-                    "file": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/values-it/strings.xml",
+                    "file": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/values-it/strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 219
                 },
                 "from": {
-                    "file": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/values-it/strings.xml",
+                    "file": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/values-it/strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 305
                 },
                 "from": {
-                    "file": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/values-it/strings.xml",
+                    "file": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/values-it/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 379
                 },
                 "from": {
-                    "file": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/values-it/strings.xml",
+                    "file": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/values-it/strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 448
                 },
                 "from": {
-                    "file": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/values-it/strings.xml",
+                    "file": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/values-it/strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,

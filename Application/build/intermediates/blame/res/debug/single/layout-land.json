@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/layout-land/materialcolorpicker__layout_color_picker_old_android.xml",
-        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/layout-land/materialcolorpicker__layout_color_picker_old_android.xml"
+        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/layout-land/materialcolorpicker__layout_color_picker_old_android.xml",
+        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/layout-land/materialcolorpicker__layout_color_picker_old_android.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/layout-land/materialcolorpicker__layout_color_picker.xml",
-        "source": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/layout-land/materialcolorpicker__layout_color_picker.xml"
+        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/layout-land/materialcolorpicker__layout_color_picker.xml",
+        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/layout-land/materialcolorpicker__layout_color_picker.xml"
     }
 ]

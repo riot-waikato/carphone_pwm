@@ -61,6 +61,8 @@ import java.util.List;
  * Bluetooth LE API.
  */
 public class DeviceControlActivity extends Activity implements SensorEventListener {
+    public CarmoverStub carmover = new CarMover();
+
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
@@ -217,38 +219,12 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                         "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
                         "\nZ:  " + Sensor_Readings[2];
 
-                //set y:
-                if (-1 * Sensor_Readings[0]*invert_cont  <= -2) {
-                    if (Sensor_Readings[0] * -1 <= -6) {
-                        chars[0] = ('0' + FORWARD_HIGH);
-                    } else if (Sensor_Readings[0] * -1*invert_cont  <= -4) {
-                        chars[0] = ('0' + FORWARD_MID);
-                    } else
-                        chars[0] = ('0' + FORWARD_LOW);
-
-                } else if (-1 * Sensor_Readings[0]*invert_cont  >= 3) {
-                    if (-1 * Sensor_Readings[0]*invert_cont  >= 7) {
-                        chars[0] = ('0' + BACKWARD_HIGH);
-                    } else if (-1 * Sensor_Readings[0]*invert_cont  >= 5) {
-                        chars[0] = ('0' + BACKWARD_MID);
-                    } else
-                        chars[0] = ('0' + BACKWARD_LOW);
-                } else
-                    chars[0] = '0' + STOP;
-
-                //set X
-                if (Sensor_Readings[1] <= -4.2)
-                    chars[1] = '0' + LEFT_FULL;
-                else if (Sensor_Readings[1] <= -2.5)
-                    chars[1] = ('0' + LEFT_HALF);
-                else if (Sensor_Readings[1] >= 4.2)
-                    chars[1] = ('0' + RIGHT_HALF);
-                else if (Sensor_Readings[1] >= 2.5)
-                    chars[1] = ('0' + RIGHT_FULL);
-                else
-                    chars[1] = '0' + STOP;
-
-                //ignore Z!
+                carmover.setChars(new char[2]);
+                carmover.setY(-1 * Sensor_Readings[0]*invert_cont);
+                carmover.setX(Sensor_Readings[1]);
+                carmover.setZ(Sensor_Readings[2]); //not used, but potentially helpful - pythag to detect forceful movement, etc
+                carmover.Act();
+                chars = carmover.getChars();
 
 
                 if(chars_last[0] != chars[0] || chars_last[1] != chars[1]) { //only update if we really need to

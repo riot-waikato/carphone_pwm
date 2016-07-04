@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
+        "outputFile": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 129
                 },
                 "from": {
-                    "file": "/home/nbk4/Desktop/BluetoothLeGatt_Alt/Application/src/main/res/values-w820dp/dimens.xml",
+                    "file": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/values-w820dp/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
