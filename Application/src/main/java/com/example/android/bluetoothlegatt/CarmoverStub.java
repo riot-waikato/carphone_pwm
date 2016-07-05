@@ -40,26 +40,24 @@ public class CarmoverStub {
     public void Act50ms() {
 
     }
-    protected void halt_accel() {
+    protected void halt_motors() {
         chars[0] = '0';
 
     }
-    protected void halt_steering() {
+    protected void steer_neutral() {
         chars[1] ='0';
     }
-    protected void mode_forward(boolean fast) {
-        if(fast)
-            chars[0] = ('0' + FORWARD_HIGH);
-        else
-            chars[0] = ('0' + FORWARD_LOW);
-
-        //disable reverse
+    protected void mode_forward() {
+        chars[0] = ('0' + FORWARD_LOW);
     }
-    protected void mode_backward(boolean fast) {
-        if(fast)
-            chars[0] = ('0' + BACKWARD_HIGH);
-        else
-            chars[0] = ('0' + BACKWARD_LOW);
+    protected void mode_fast_forward() {
+        chars[0] = '0' + FORWARD_HIGH;
+    }
+    protected void mode_fast_backward() {
+        chars[0] = '0' + BACKWARD_HIGH;
+    }
+    protected void mode_backward() {
+        chars[0] = ('0' + BACKWARD_LOW);
     }
     protected void steer_left() {
         chars[1] = LEFT_FULL;

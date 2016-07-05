@@ -5,12 +5,13 @@ package com.example.android.bluetoothlegatt;
  */
 /*
     Relevant functions:
-        void    halt_accel          ()
-        void    halt_steering       ()
-        void    move_forward        (fast)      Boolean: true/false
-        void    move_backward       (fast)      Boolean: true/false
+        void    mode_forward        ()
+        void    mode_fastforward    ()
+        void    mode_backward       ()
+        void    mode_fastbackward   ()
         void    steer_left          ()
         void    steer_right         ()
+        void    steer_neutral       ()
  */
 public class CarMover extends CarmoverStub {
     public
@@ -30,18 +31,18 @@ public class CarMover extends CarmoverStub {
 
         //Y movement
         if (Y  <= -2) {
-            if (Y <= -5) mode_forward(true);
-            else         mode_forward(false);
+            if (Y <= -5) mode_fast_backward();
+            else         mode_forward();
         }
         else if (Y  >= 3) {
-            if (Y  >= 7) mode_backward(true);
-            else         mode_backward(false);
+            if (Y  >= 7) mode_fast_backward();
+            else         mode_backward();
         }
         //else halt_accel();
 
         //X movement
-        /*if (X<= -3.2)    steer_left();
+        if (X<= -3.2)    steer_left();
         else if (X>= 3.2)steer_right();
-        //else             halt_steering(); */
+        else             steer_neutral();
     }
 }
