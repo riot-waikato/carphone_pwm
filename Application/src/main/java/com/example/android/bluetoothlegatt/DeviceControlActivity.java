@@ -219,11 +219,11 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                         "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
                         "\nZ:  " + Sensor_Readings[2];
 
-                carmover.setChars(new char[2]);
+                carmover.setChars(new char[] {'0', '0'});
                 carmover.setY(-1 * Sensor_Readings[0]*invert_cont);
                 carmover.setX(Sensor_Readings[1]);
                 carmover.setZ(Sensor_Readings[2]); //not used, but potentially helpful - pythag to detect forceful movement, etc
-                carmover.Act();
+                carmover.Act50ms();
                 chars = carmover.getChars();
 
 
@@ -370,7 +370,8 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
 
     private void clearUI() {
         //mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
-        mDataField.setText(R.string.no_data);
+        if(mDataField != null)
+            mDataField.setText(R.string.no_data);
     }
 
     @Override

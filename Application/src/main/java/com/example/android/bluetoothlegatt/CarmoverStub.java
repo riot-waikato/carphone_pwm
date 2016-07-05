@@ -37,7 +37,7 @@ public class CarmoverStub {
     public CarmoverStub() {
 
     }
-    public void Act() {
+    public void Act50ms() {
 
     }
     protected void halt_accel() {

@@ -20,7 +20,7 @@ public class CarMover extends CarmoverStub {
 
     //this is the part that the students should be modifying
     @Override
-    public void Act() {
+    public void Act50ms() {
         //given values X, Y, Z, decide on how the car should move
         //X, Y, Z are accelerometer values
         //gravity gives ~9.81 Newtons, will be distributed across axis
@@ -37,11 +37,11 @@ public class CarMover extends CarmoverStub {
             if (Y  >= 7) mode_backward(true);
             else         mode_backward(false);
         }
-        else halt_accel();
+        //else halt_accel();
 
         //X movement
-        if (X<= -3.2)    steer_left();
+        /*if (X<= -3.2)    steer_left();
         else if (X>= 3.2)steer_right();
-        else             halt_steering();
+        //else             halt_steering(); */
     }
 }
