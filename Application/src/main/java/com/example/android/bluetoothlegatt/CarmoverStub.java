@@ -19,6 +19,7 @@ public class CarmoverStub {
     protected float X;
     protected float Y;
     protected float Z;
+    protected float T;
     public void setX(float x) {
         X = x;
     }
@@ -28,9 +29,11 @@ public class CarmoverStub {
     public void setZ(float z) {
         Z = z;
     }
+    public void setT(float t) { T = t; }
     public float getX() { return X; }
     public float getY() { return Y; }
     public float getZ() { return Z; }
+    public float getT() { return T; }
     public char[] getChars() {
         return chars;
     }

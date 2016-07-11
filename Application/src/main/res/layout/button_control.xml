@@ -47,36 +47,55 @@
 
         android:layout_width="500px"
         android:layout_height="100px"
-        android:text="xh"/>
+        android:text="xh"
+        android:textSize="20dp"/>
     <TextView
         android:id="@+id/YH"
         android:layout_width="500px"
         android:layout_height="100px"
-        android:text="yh"/>
+        android:text="yh"
+        android:textSize="20dp"/>
     <TextView
         android:id="@+id/ZH"
 
         android:layout_width="500px"
         android:layout_height="100px"
-        android:text="zh"/>
+        android:text="zh"
+        android:textSize="20dp"/>
     <TextView
         android:id="@+id/XV"
         android:layout_width="500px"
         android:layout_height="100px"
         android:rotation="-90"
-        android:text="xv"/>
+        android:text="xv"
+        android:textSize="20dp"/>
     <TextView
         android:id="@+id/YV"
         android:layout_width="500px"
         android:layout_height="100px"
         android:rotation="-90"
-        android:text="yv"/>
+        android:text="yv"
+        android:textSize="20dp"/>
     <TextView
         android:id="@+id/ZV"
         android:layout_width="500px"
         android:layout_height="100px"
         android:rotation="-90"
-        android:text="zv"/>
+        android:text="zv"
+        android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/TIMEV"
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:rotation="-90"
+        android:text="TIME"
+        android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/TIME"
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:text="TIME"
+        android:textSize="20dp"/>
     <TextView
         android:id="@+id/right_char"
         android:layout_width="wrap_content"

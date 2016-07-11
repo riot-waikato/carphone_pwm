@@ -198,6 +198,8 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
         }
     };
 
+    float _t = 0;
+
     @Override
     public void onSensorChanged(SensorEvent e) {
         Sensor sensor = e.sensor;
@@ -223,6 +225,8 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 TextView XV = (TextView) findViewById(R.id.XV);
                 TextView YV = (TextView) findViewById(R.id.YV);
                 TextView ZV = (TextView) findViewById(R.id.ZV);
+                TextView TH = (TextView) findViewById(R.id.TIME);
+                TextView TV = (TextView) findViewById(R.id.TIMEV);
 
                 String outputString = "Current time:  " + curTime + "\nLast update:  " + lastUpdate +
                         "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
@@ -232,6 +236,7 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 carmover.setY(-1 * Sensor_Readings[0]*invert_cont);
                 carmover.setX(Sensor_Readings[1]);
                 carmover.setZ(Sensor_Readings[2]); //not used, but potentially helpful - pythag to detect forceful movement, etc
+                carmover.setT(_t);
                 carmover.Act50ms();
                 chars = carmover.getChars();
 
@@ -240,7 +245,10 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                     if (mBluetoothLeService != null) {
                         for (int i = 0; i < chars.length; i++) {
                             mBluetoothLeService.writeCustomCharacteristic((int) chars[1 - i], 1 - i);
+                            //mBluetoothLeService.writeCustomCharacteristic_2((int) chars[1 - i], 1 - i);
+
                         }
+
                         lastUpdate = curTime;
                     }
                     chars_last[0] = chars[0];
@@ -301,41 +309,46 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
 
 
                 redSquare2.layout(screenWidth/2 - 194 + seperate, screenHeight/2 -128, screenWidth/2 + 194 + seperate, screenHeight/2);
-
+                _t += 0.050f;
                 String measure = "x: -0.123456789";
                 Rect bound = new Rect();
                 XH.getPaint().getTextBounds(measure, 0, measure.length() - 1, bound);
                 //xyz text output
                 if(ORD_ENABLED) {
                     XH.setVisibility(View.VISIBLE);
-                    XH.setText("X: " + carmover.getX());
+                    XH.setText("X: " + String.format("%6.3f",carmover.getX()));
                     XH.setX(screenWidth/2 - bound.width()/2);
                     XH.setY(bound.height()*0.45f);
 
                     XV.setVisibility(View.VISIBLE);
-                    XV.setText("X: " + carmover.getX());
+                    XV.setText("X: " + String.format("%6.3f",carmover.getX()));
                     XV.setY(screenHeight/2.0f - bound.width());
                     XV.setX(bound.height()*0.45f - 200);
 
                     YH.setVisibility(View.VISIBLE);
-                    YH.setText("Y: " + carmover.getY());
+                    YH.setText("Y: " + String.format("%6.3f",carmover.getY()));
                     YH.setX(screenWidth/2 - bound.width()/2);
                     YH.setY((bound.height()*1.90f));
 
                     YV.setVisibility(View.VISIBLE);
-                    YV.setText("Y: " + carmover.getY());
+                    YV.setText("Y: " + String.format("%6.3f",carmover.getY()));
                     YV.setY(screenHeight/2.0f - bound.width());
                     YV.setX(bound.height()*1.90f - 200);
 
                     ZH.setVisibility(View.VISIBLE);
-                    ZH.setText("Z: " + carmover.getZ());
+                    ZH.setText("Z: " + String.format("%6.3f",carmover.getZ()));
                     ZH.setX(screenWidth/2 - bound.width()/2);
                     ZH.setY(bound.height()*3.35f);
 
                     ZV.setVisibility(View.VISIBLE);
-                    ZV.setText("Z: " + carmover.getZ());
+                    ZV.setText("Z: " + String.format("%6.3f",carmover.getZ()));
                     ZV.setY(screenHeight/2.0f - bound.width());
                     ZV.setX(bound.height()*3.35f - 200);
+
+                    TV.setVisibility(View.VISIBLE);
+                    TV.setText("T: " + String.format("%6.1f",carmover.getT()));
+                    TV.setY(screenHeight/2.0f - bound.width());
+                    TV.setX(bound.height()*4.80f - 200);
                 }
                 else {
                     XH.setVisibility(View.GONE);
