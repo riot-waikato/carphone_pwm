@@ -42,7 +42,41 @@
         android:layout_width="125px"
         android:layout_height="125px"
         android:background="@android:color/holo_orange_dark"/>
+    <TextView
+        android:id="@+id/XH"
 
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:text="xh"/>
+    <TextView
+        android:id="@+id/YH"
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:text="yh"/>
+    <TextView
+        android:id="@+id/ZH"
+
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:text="zh"/>
+    <TextView
+        android:id="@+id/XV"
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:rotation="-90"
+        android:text="xv"/>
+    <TextView
+        android:id="@+id/YV"
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:rotation="-90"
+        android:text="yv"/>
+    <TextView
+        android:id="@+id/ZV"
+        android:layout_width="500px"
+        android:layout_height="100px"
+        android:rotation="-90"
+        android:text="zv"/>
     <TextView
         android:id="@+id/right_char"
         android:layout_width="wrap_content"
@@ -65,8 +99,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="L"/>
-
-
 </RelativeLayout>
 
                   

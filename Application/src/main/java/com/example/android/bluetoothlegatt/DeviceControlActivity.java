@@ -29,6 +29,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -68,6 +69,7 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
 
+    private boolean ORD_ENABLED = true;
     private TextView mConnectionState;
     private TextView mDataField;
     private String mDeviceName;
@@ -215,6 +217,13 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 TextView textLeft = (TextView) findViewById(R.id.left_char);
                 TextView textRight = (TextView) findViewById(R.id.right_char);
 
+                TextView XH = (TextView) findViewById(R.id.XH);
+                TextView YH = (TextView) findViewById(R.id.YH);
+                TextView ZH = (TextView) findViewById(R.id.ZH);
+                TextView XV = (TextView) findViewById(R.id.XV);
+                TextView YV = (TextView) findViewById(R.id.YV);
+                TextView ZV = (TextView) findViewById(R.id.ZV);
+
                 String outputString = "Current time:  " + curTime + "\nLast update:  " + lastUpdate +
                         "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
                         "\nZ:  " + Sensor_Readings[2];
@@ -247,7 +256,6 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
 
 
 
-
                 /////////////////////////layout things
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 WindowManager wm = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE); // the results will be higher than using the activity context object or the getWindowManager() shortcut
@@ -263,7 +271,6 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 //boundaries: 3 5 7 | 2 4 6 | 2.5 4.2
                 //multiplier: 15
                 //this gives us 45 75 105 | 30 60 90 | 37.7 63
-
                 int disp = 0;
                 int size_orange = 64;
                 redSquare.layout(screenWidth/2 - 64 - seperate, screenHeight/2 -256, screenWidth/2 + 64 - seperate, screenHeight/2 + 128);
@@ -294,6 +301,50 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
 
 
                 redSquare2.layout(screenWidth/2 - 194 + seperate, screenHeight/2 -128, screenWidth/2 + 194 + seperate, screenHeight/2);
+
+                String measure = "x: -0.123456789";
+                Rect bound = new Rect();
+                XH.getPaint().getTextBounds(measure, 0, measure.length() - 1, bound);
+                //xyz text output
+                if(ORD_ENABLED) {
+                    XH.setVisibility(View.VISIBLE);
+                    XH.setText("X: " + carmover.getX());
+                    XH.setX(screenWidth/2 - bound.width()/2);
+                    XH.setY(bound.height()*0.45f);
+
+                    XV.setVisibility(View.VISIBLE);
+                    XV.setText("X: " + carmover.getX());
+                    XV.setY(screenHeight/2.0f - bound.width());
+                    XV.setX(bound.height()*0.45f - 200);
+
+                    YH.setVisibility(View.VISIBLE);
+                    YH.setText("Y: " + carmover.getY());
+                    YH.setX(screenWidth/2 - bound.width()/2);
+                    YH.setY((bound.height()*1.90f));
+
+                    YV.setVisibility(View.VISIBLE);
+                    YV.setText("Y: " + carmover.getY());
+                    YV.setY(screenHeight/2.0f - bound.width());
+                    YV.setX(bound.height()*1.90f - 200);
+
+                    ZH.setVisibility(View.VISIBLE);
+                    ZH.setText("Z: " + carmover.getZ());
+                    ZH.setX(screenWidth/2 - bound.width()/2);
+                    ZH.setY(bound.height()*3.35f);
+
+                    ZV.setVisibility(View.VISIBLE);
+                    ZV.setText("Z: " + carmover.getZ());
+                    ZV.setY(screenHeight/2.0f - bound.width());
+                    ZV.setX(bound.height()*3.35f - 200);
+                }
+                else {
+                    XH.setVisibility(View.GONE);
+                    XV.setVisibility(View.GONE);
+                    YH.setVisibility(View.GONE);
+                    YV.setVisibility(View.GONE);
+                    ZH.setVisibility(View.GONE);
+                    ZV.setVisibility(View.GONE);
+                }
 
                 ViewGroup vg = (ViewGroup)findViewById(R.id.controlmaster);
                 vg.invalidate();

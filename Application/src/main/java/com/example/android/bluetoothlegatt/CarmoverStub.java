@@ -28,6 +28,9 @@ public class CarmoverStub {
     public void setZ(float z) {
         Z = z;
     }
+    public float getX() { return X; }
+    public float getY() { return Y; }
+    public float getZ() { return Z; }
     public char[] getChars() {
         return chars;
     }
@@ -42,7 +45,6 @@ public class CarmoverStub {
     }
     protected void halt_motors() {
         chars[0] = '0';
-
     }
     protected void steer_neutral() {
         chars[1] ='0';
@@ -53,16 +55,18 @@ public class CarmoverStub {
     protected void mode_fast_forward() {
         chars[0] = '0' + FORWARD_HIGH;
     }
-    protected void mode_fast_backward() {
-        chars[0] = '0' + BACKWARD_HIGH;
-    }
+
     protected void mode_backward() {
         chars[0] = ('0' + BACKWARD_LOW);
     }
+    protected void mode_fast_backward() {
+        chars[0] = '0' + BACKWARD_HIGH;
+    }
+
     protected void steer_left() {
-        chars[1] = LEFT_FULL;
+        chars[1] = '0' + LEFT_FULL;
     }
     protected void steer_right() {
-        chars[1] = RIGHT_FULL;
+        chars[1] = '0' + RIGHT_FULL;
     }
 }

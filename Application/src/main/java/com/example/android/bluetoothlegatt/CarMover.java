@@ -31,11 +31,11 @@ public class CarMover extends CarmoverStub {
 
         //Y movement
         if (Y  <= -2) {
-            if (Y <= -5) mode_fast_backward();
+            if (Y <= -4) mode_fast_forward();
             else         mode_forward();
         }
         else if (Y  >= 3) {
-            if (Y  >= 7) mode_fast_backward();
+            if (Y  >= 5) mode_fast_backward();
             else         mode_backward();
         }
         //else halt_accel();

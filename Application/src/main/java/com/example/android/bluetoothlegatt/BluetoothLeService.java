@@ -42,9 +42,13 @@ import java.util.UUID;
 public class BluetoothLeService extends Service {
     private final static String TAG = BluetoothLeService.class.getSimpleName();
 
-    private static final String UUID_SERVICE = "6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
-    private static final String UUID_TX = "6E400002-B5A3-F393-E0A9-E50E24DCCA9E";
-    private static final String UUID_RX = "6E400003-B5A3-F393-E0A9-E50E24DCCA9E";
+    private static final String UUID_SERVICE     = "6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
+    private static final String UUID_TX          = "6E400002-B5A3-F393-E0A9-E50E24DCCA9E";
+    private static final String UUID_RX          = "6E400003-B5A3-F393-E0A9-E50E24DCCA9E";
+
+    private static final String UUID_ALT_SERVICE = "195AE58A-437A-489B-B0CD-B7C9C394BAE4";
+    private static final String UUID_ALT_TX      = "5FC569A0-74A9-4FA4-B8B7-8354C86E45A4";
+    private static final String UUID_ALT_RX      = "21819ABO-C937-4188-BODB-B9621E1696CD";
 
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
@@ -352,6 +356,26 @@ public class BluetoothLeService extends Service {
         }
         /*get the read characteristic from the service*/
         BluetoothGattCharacteristic mWriteCharacteristic = mCustomService.getCharacteristic(UUID.fromString(UUID_TX));
+        mWriteCharacteristic.setValue(value, BluetoothGattCharacteristic.FORMAT_UINT8,rem);
+        if(mBluetoothGatt.writeCharacteristic(mWriteCharacteristic) == false){
+            Log.w(TAG, "Failed to write NORDIC");
+        }
+    }
+
+    public void writeCustomCharacteristic_2(int value, int rem) {
+        System.out.print("Attempting alternate characteristic... ");
+        if (mBluetoothAdapter == null || mBluetoothGatt == null) {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+            return;
+        }
+        /*check if the service is available on the device*/
+        BluetoothGattService mCustomService = mBluetoothGatt.getService(UUID.fromString(UUID_ALT_SERVICE));
+        if(mCustomService == null){
+            //Log.w(TAG, "Custom BLE Service not found");
+            return;
+        }
+        /*get the read characteristic from the service*/
+        BluetoothGattCharacteristic mWriteCharacteristic = mCustomService.getCharacteristic(UUID.fromString(UUID_ALT_TX));
         mWriteCharacteristic.setValue(value, BluetoothGattCharacteristic.FORMAT_UINT8,rem);
         if(mBluetoothGatt.writeCharacteristic(mWriteCharacteristic) == false){
             Log.w(TAG, "Failed to write characteristic");
