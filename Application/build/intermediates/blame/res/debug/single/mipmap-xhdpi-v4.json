@@ -1,26 +1,50 @@
 [
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/red_thumb_pressed.png",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/mipmap-xhdpi/red_thumb_pressed.png"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\green_thumb_default.png",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\mipmap-xhdpi\\green_thumb_default.png"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/blue_thumb_default.png",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/mipmap-xhdpi/blue_thumb_default.png"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\blue_thumb_default.png",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\mipmap-xhdpi\\blue_thumb_default.png"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/red_thumb_default.png",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/mipmap-xhdpi/red_thumb_default.png"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\blue_thumb_pressed.png",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\mipmap-xhdpi\\blue_thumb_pressed.png"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/blue_thumb_pressed.png",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/mipmap-xhdpi/blue_thumb_pressed.png"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\green_thumb_pressed.png",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\mipmap-xhdpi\\green_thumb_pressed.png"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/green_thumb_default.png",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/mipmap-xhdpi/green_thumb_default.png"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\green_thumb_pressed.png",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\mipmap-xhdpi\\green_thumb_pressed.png"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/green_thumb_pressed.png",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/mipmap-xhdpi/green_thumb_pressed.png"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\red_thumb_pressed.png",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\mipmap-xhdpi\\red_thumb_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\blue_thumb_pressed.png",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\mipmap-xhdpi\\blue_thumb_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\red_thumb_default.png",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\mipmap-xhdpi\\red_thumb_default.png"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\red_thumb_pressed.png",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\mipmap-xhdpi\\red_thumb_pressed.png"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\green_thumb_default.png",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\mipmap-xhdpi\\green_thumb_default.png"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\blue_thumb_default.png",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\mipmap-xhdpi\\blue_thumb_default.png"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\red_thumb_default.png",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\mipmap-xhdpi\\red_thumb_default.png"
     }
 ]

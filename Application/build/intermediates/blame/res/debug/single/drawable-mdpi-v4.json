@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable-mdpi/ic_launcher.png"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     }
 ]

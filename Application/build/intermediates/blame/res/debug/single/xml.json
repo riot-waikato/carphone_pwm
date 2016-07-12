@@ -1,14 +1,26 @@
 [
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/xml/array.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/xml/array.xml"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\xml\\array.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\xml\\array.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/xml/preferences.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/xml/preferences.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\xml\\preferences.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/xml/headers.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/xml/headers.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\xml\\headers.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\xml\\headers.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\xml\\headers.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\xml\\headers.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\xml\\preferences.xml"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\xml\\array.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\xml\\array.xml"
     }
 ]

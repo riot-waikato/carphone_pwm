@@ -1,34 +1,66 @@
 [
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/materialcolorpicker__green_thumb_drawable.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/materialcolorpicker__green_thumb_drawable.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__green_progress.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\materialcolorpicker__green_progress.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/materialcolorpicker__red_thumb_drawable.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/materialcolorpicker__red_thumb_drawable.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__color_button_16.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\materialcolorpicker__color_button_16.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/materialcolorpicker__color_button.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/materialcolorpicker__color_button.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\red_progress.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\red_progress.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/materialcolorpicker__green_progress.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/materialcolorpicker__green_progress.xml"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__red_thumb_drawable.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\materialcolorpicker__red_thumb_drawable.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/materialcolorpicker__color_button_16.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/materialcolorpicker__color_button_16.xml"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__green_thumb_drawable.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\materialcolorpicker__green_thumb_drawable.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/materialcolorpicker__blue_progress.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/materialcolorpicker__blue_progress.xml"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\red_progress.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\red_progress.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/materialcolorpicker__blue_thumb_drawable.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/materialcolorpicker__blue_thumb_drawable.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__red_thumb_drawable.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\materialcolorpicker__red_thumb_drawable.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/drawable/red_progress.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/drawable/red_progress.xml"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__green_progress.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\materialcolorpicker__green_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__color_button_16.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\materialcolorpicker__color_button_16.xml"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__blue_progress.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\materialcolorpicker__blue_progress.xml"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__color_button.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\materialcolorpicker__color_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__blue_progress.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\materialcolorpicker__blue_progress.xml"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__blue_thumb_drawable.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\materialcolorpicker__blue_thumb_drawable.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__color_button.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\materialcolorpicker__color_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__blue_thumb_drawable.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\drawable\\materialcolorpicker__blue_thumb_drawable.xml"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\drawable\\materialcolorpicker__green_thumb_drawable.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\drawable\\materialcolorpicker__green_thumb_drawable.xml"
     }
 ]

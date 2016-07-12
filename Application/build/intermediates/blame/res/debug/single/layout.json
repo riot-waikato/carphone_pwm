@@ -1,22 +1,42 @@
 [
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/layout/actionbar_indeterminate_progress.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/layout/actionbar_indeterminate_progress.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\prefset.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\layout\\prefset.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/layout/listitem_device.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/layout/listitem_device.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_indeterminate_progress.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\layout\\actionbar_indeterminate_progress.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/layout/gatt_services_characteristics.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/layout/gatt_services_characteristics.xml"
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_indeterminate_progress.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\layout\\actionbar_indeterminate_progress.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/layout/button_control.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/layout/button_control.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\gatt_services_characteristics.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\layout\\gatt_services_characteristics.xml"
     },
     {
-        "merged": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/build/intermediates/res/merged/debug/layout/prefset.xml",
-        "source": "/home/nbk4/Desktop/carphone-2/carphone_pwm/Application/src/main/res/layout/prefset.xml"
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\button_control.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\layout\\button_control.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\gatt_services_characteristics.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\layout\\gatt_services_characteristics.xml"
+    },
+    {
+        "merged": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_device.xml",
+        "source": "C:\\home\\nbk4\\Desktop\\carphone-2\\carphone_pwm\\Application\\src\\main\\res\\layout\\listitem_device.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\button_control.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\layout\\button_control.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\prefset.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\layout\\prefset.xml"
+    },
+    {
+        "merged": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_device.xml",
+        "source": "C:\\Users\\openday\\Desktop\\BillTwo\\Application\\src\\main\\res\\layout\\listitem_device.xml"
     }
 ]
