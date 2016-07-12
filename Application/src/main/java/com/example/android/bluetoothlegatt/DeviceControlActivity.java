@@ -45,6 +45,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -199,6 +200,7 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
     };
 
     float _t = 0;
+    boolean _c = true;
 
     @Override
     public void onSensorChanged(SensorEvent e) {
@@ -213,11 +215,18 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 ImageView circle2 = (ImageView) findViewById(R.id.indicator_leftright);
                 ImageView redSquare = (ImageView) findViewById(R.id.redsquare_updown);
                 ImageView redSquare2 = (ImageView) findViewById(R.id.redsquare_leftright);
+                redSquare.setVisibility(View.INVISIBLE);
+                redSquare2.setVisibility(View.INVISIBLE);
 
                 TextView textForward = (TextView) findViewById(R.id.forward_char);
                 TextView textBackward = (TextView) findViewById(R.id.backward_char);
                 TextView textLeft = (TextView) findViewById(R.id.left_char);
                 TextView textRight = (TextView) findViewById(R.id.right_char);
+
+                textForward.setVisibility(View.INVISIBLE);
+                textBackward.setVisibility(View.INVISIBLE);
+                textLeft.setVisibility(View.INVISIBLE);
+                textRight.setVisibility(View.INVISIBLE);
 
                 TextView XH = (TextView) findViewById(R.id.XH);
                 TextView YH = (TextView) findViewById(R.id.YH);
@@ -227,6 +236,9 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                 TextView ZV = (TextView) findViewById(R.id.ZV);
                 TextView TH = (TextView) findViewById(R.id.TIME);
                 TextView TV = (TextView) findViewById(R.id.TIMEV);
+
+                Button reset = (Button) findViewById(R.id.buttonReset);
+                Button stop = (Button) findViewById(R.id.buttonStop);
 
                 String outputString = "Current time:  " + curTime + "\nLast update:  " + lastUpdate +
                         "\nY:  " + (-1 * Sensor_Readings[0]) + "\nX:  " + Sensor_Readings[1] +
@@ -309,7 +321,7 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
 
 
                 redSquare2.layout(screenWidth/2 - 194 + seperate, screenHeight/2 -128, screenWidth/2 + 194 + seperate, screenHeight/2);
-                _t += 0.050f;
+                if(_c) _t += 0.050f;
                 String measure = "x: -0.123456789";
                 Rect bound = new Rect();
                 XH.getPaint().getTextBounds(measure, 0, measure.length() - 1, bound);
@@ -349,6 +361,17 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
                     TV.setText("T: " + String.format("%6.1f",carmover.getT()));
                     TV.setY(screenHeight/2.0f - bound.width());
                     TV.setX(bound.height()*4.80f - 200);
+
+
+                    reset.setX(screenWidth/1.40f);
+                    reset.setY(screenHeight/3f);
+                    stop.setX(screenWidth/1.40f);
+                    stop.setY(screenHeight/3f + reset.getHeight()*1.5f);
+                    reset.setWidth(stop.getWidth());
+
+                    TH.setX(stop.getX() + stop.getWidth()/2f -bound.width()/2);
+                    TH.setY(reset.getY() - 120);
+                    TH.setText("T: " + String.format("%6.1f",carmover.getT()));
                 }
                 else {
                     XH.setVisibility(View.GONE);
@@ -462,6 +485,21 @@ public class DeviceControlActivity extends Activity implements SensorEventListen
 
         sharedprefs = getApplicationContext().getSharedPreferences(prefskey, Context.MODE_PRIVATE);
         setPrefs();
+
+        final Button btn = (Button) findViewById(R.id.buttonReset);
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                _t = 0;
+            }
+        });
+
+        final Button btn2 = (Button) findViewById(R.id.buttonStop);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                _c = !_c;
+            }
+        });
+
     }
 
     @Override

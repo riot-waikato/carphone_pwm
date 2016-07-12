@@ -118,6 +118,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="L"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset Timer"
+        android:id="@+id/buttonReset"
+        android:layout_marginBottom="86dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/redsquare_updown" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start/Stop Timer"
+        android:id="@+id/buttonStop"
+        android:layout_toEndOf="@+id/XH" />
 </RelativeLayout>
 
                   
